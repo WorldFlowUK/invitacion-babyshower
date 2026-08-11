@@ -1,0 +1,26 @@
+# dependencies
+node_modules
+
+# build output
+dist
+dist-ssr
+
+# env
+.env
+.env.local
+.env.*.local
+
+# editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# os
+.DS_Store
+
+# logs
+*.log
+npm-debug.log*
+
+# audio (opcional: descomenta si no quieres versionar el mp3 final)
+# public/audio/background.mp3
