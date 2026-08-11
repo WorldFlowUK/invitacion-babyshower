@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Ivory / warm white */
+  --background: 250 246 238;
+  --foreground: 58 46 41;
+
+  /* Warm brown, used as the anchoring "ink" color */
+  --primary: 91 61 46;
+
+  /* Soft sage, secondary accent */
+  --secondary: 141 152 121;
+
+  /* Soft gold, the signature line-art color */
+  --accent: 176 138 74;
+
+  /* Beige, muted text and dividers */
+  --muted: 168 152 132;
+
+  /* Champagne, borders and hairlines */
+  --border: 224 209 184;
+
+  /* Dusty rose, small warm surfaces (cards, chips) */
+  --surface: 238 223 214;
+}
+
+* {
+  border-color: rgb(var(--border) / 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-background text-foreground font-body antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::selection {
+  background-color: rgb(var(--accent) / 0.25);
+  color: rgb(var(--primary));
+}
+
+.font-display {
+  font-family: 'Cormorant Garamond', serif;
+}
