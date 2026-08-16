@@ -1,4 +1,4 @@
-import { FadeInSection } from '@/components/effects/FadeInSection'
+﻿import { FadeInSection } from '@/components/effects/FadeInSection'
 import { Container } from '@/components/ui/Container'
 import { invitation } from '@/data/invitation'
 
@@ -41,7 +41,7 @@ export function Hero() {
 
         <FadeInSection delay={0.3}>
           <p className="max-w-sm text-sm leading-relaxed text-foreground/80">
-            {invitation.parents.mother} &amp; {invitation.parents.father} te invitan a celebrar la
+          La familia VW crece. Únete a nosotros para celebrar el Baby Shower de Leonardo. Costo del evento: $375 pesos.
             llegada de esta nueva vida.
           </p>
         </FadeInSection>

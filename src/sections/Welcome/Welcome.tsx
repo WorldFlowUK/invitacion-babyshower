@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+﻿import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/Button'
 import { useAudio } from '@/components/audio/AudioProvider'
 import { invitation } from '@/data/invitation'
