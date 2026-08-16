@@ -92,36 +92,18 @@ opciones antes de compartir el link.
 Copia `.env.example` a `.env` y llena solo la opción que vayas a usar.
 Nunca se sube `.env` al repositorio.
 
-## Deployment en Cloudflare
+## Deployment en Cloudflare Pages
 
-Tu proyecto quedó creado como un Worker de Cloudflare (la plataforma
-unificada que reemplaza a Pages), no como un proyecto clásico de Pages.
-Eso significa que el deploy corre `npx wrangler deploy` en vez de subir
-`dist` directamente, y por defecto Wrangler intenta autoconfigurar el
-proyecto usando el plugin de Vite para Cloudflare, algo que solo
-funciona con Vite 6 o superior.
+Conecta el repositorio de GitHub desde el dashboard de Cloudflare Pages
+y usa esta configuración de build:
 
-Para evitar ese problema sin forzar una migración de Vite, el
-repositorio ya incluye `wrangler.jsonc` en la raíz, configurando el
-proyecto como un Worker de solo assets estáticos que sirve `dist/` con
-fallback de SPA (`not_found_handling: "single-page-application"`). Con
-ese archivo presente, Wrangler deja de intentar la autoconfiguración
-por Vite y simplemente publica los archivos generados por el build,
-exactamente el comportamiento que buscábamos con un sitio estático.
+Framework preset: Vite. Build command: `npm run build`. Build output
+directory: `dist`. Si vas a usar el webhook o Supabase, agrega las
+mismas variables de `.env` en Settings → Environment variables del
+proyecto en Cloudflare, tanto para Production como para Preview.
 
-No hace falta tocar nada en el dashboard de Cloudflare: en cuanto
-subas este cambio a GitHub, el próximo build disparado automáticamente
-por el push debería completarse sin el error de versión de Vite. Si
-quieres confirmarlo localmente antes de subirlo, `npm run build` seguido
-de `npx wrangler deploy --dry-run` valida el deploy sin publicar nada
-ni requerir login en Cloudflare.
-
-Si vas a usar el webhook o Supabase para el RSVP, agrega las mismas
-variables de `.env` en Settings → Variables and Secrets del proyecto en
-Cloudflare, tanto para Production como para Preview.
-
-`public/_redirects` se mantiene por compatibilidad, pero el fallback de
-SPA real en este setup lo resuelve `wrangler.jsonc`.
+El archivo `public/_redirects` ya deja resuelto el fallback de rutas
+para que la aplicación funcione correctamente como SPA.
 
 ## Estructura
 
