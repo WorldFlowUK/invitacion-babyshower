@@ -25,5 +25,8 @@ npm-debug.log*
 # typescript incremental build cache
 *.tsbuildinfo
 
+# wrangler local cache
+.wrangler
+
 # audio (opcional: descomenta si no quieres versionar el mp3 final)
 # public/audio/background.mp3
