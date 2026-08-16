@@ -38,5 +38,9 @@ export type InvitationData = {
     enabled: boolean
     source: string
   }
+  photos: {
+    hero: string | null
+    detail: string | null
+  }
   giftRegistryUrl: string
 }

@@ -10,11 +10,11 @@ import type { InvitationData } from '@/types'
  * propagarán a toda la invitación automáticamente.
  */
 export const invitation: InvitationData = {
-  babyName: '[Nombre del bebé]',
+  babyName: 'Leonardo',
 
   parents: {
-    mother: '[Nombre de la mamá]',
-    father: '[Nombre del papá]',
+    mother: 'Alejandra',
+    father: 'Alejandro',
   },
 
   event: {
@@ -39,6 +39,11 @@ export const invitation: InvitationData = {
   audio: {
     enabled: true,
     source: '/audio/background.mp3',
+  },
+
+  photos: {
+    hero: '/images/couple-hero.jpg',
+    detail: '/images/couple-detail.jpg',
   },
 
   // Vacío intencionalmente: la sección de regalos no se muestra
