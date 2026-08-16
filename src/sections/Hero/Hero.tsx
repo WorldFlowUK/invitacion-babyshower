@@ -14,13 +14,17 @@ export function Hero() {
         </FadeInSection>
 
         {invitation.photos.hero && (
-          <FadeInSection delay={0.1} y={16} className="w-full max-w-[280px]">
+          <FadeInSection delay={0.1} y={16} className="w-full max-w-[18rem] sm:max-w-xs">
             <div className="overflow-hidden rounded-[2rem] border border-border shadow-[0_18px_40px_-20px_rgba(91,61,46,0.35)]">
               <img
                 src={invitation.photos.hero}
                 alt={`${invitation.parents.mother} y ${invitation.parents.father} esperando a ${invitation.babyName}`}
-                className="aspect-[2/3] w-full object-cover"
+                width={1000}
+                height={1500}
+                className="block aspect-[2/3] h-auto w-full object-cover object-center"
                 loading="eager"
+                decoding="async"
+                sizes="(min-width: 640px) 320px, 288px"
               />
             </div>
           </FadeInSection>

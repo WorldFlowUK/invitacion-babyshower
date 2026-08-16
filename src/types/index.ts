@@ -13,6 +13,14 @@ export type RSVPAnswer = {
   createdAt: string
 }
 
+export type BabyPredictionOptionId = 'mother' | 'father' | 'both'
+
+export type BabyPredictionOption = {
+  id: BabyPredictionOptionId
+  label: string
+  response: string
+}
+
 export type InvitationData = {
   babyName: string
   parents: {
@@ -41,6 +49,11 @@ export type InvitationData = {
   photos: {
     hero: string | null
     detail: string | null
+  }
+  interactiveGame: {
+    eyebrow: string
+    question: string
+    options: BabyPredictionOption[]
   }
   giftRegistryUrl: string
 }

@@ -1,60 +1,48 @@
 import type { RSVPAnswer } from '@/types'
 
-const STORAGE_KEY = 'baby-shower-rsvp-responses'
+const RSVP_TIMEOUT_MS = 15000
 
 /**
- * Punto único de envío del RSVP. Hoy soporta dos backends, en este orden:
- *
- * 1. Un webhook (VITE_RSVP_WEBHOOK_URL), pensado para conectarse
- *    directamente a un workflow de n8n existente: puede reenviar la
- *    respuesta a Sheets, Zoho, WhatsApp o correo sin tocar este componente.
- * 2. Supabase (VITE_SUPABASE_URL + VITE_SUPABASE_ANON_KEY), siguiendo el
- *    modelo de datos documentado en README.md, tabla `rsvps`.
- *
- * Si ninguno está configurado, la respuesta se guarda en localStorage
- * para no romper la experiencia, y se marca `persisted: false` para que
- * la UI pueda avisar con un mensaje amable en vez de un error técnico.
+ * Punto único de envío del RSVP hacia Supabase.
+ * Requiere VITE_SUPABASE_URL y VITE_SUPABASE_ANON_KEY. Si falta la
+ * configuración o Supabase rechaza el insert, la UI muestra error.
  */
-export async function submitRSVP(answer: RSVPAnswer): Promise<{ persisted: boolean }> {
-  const webhookUrl = import.meta.env.VITE_RSVP_WEBHOOK_URL as string | undefined
-  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL as string | undefined
-  const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined
+export async function submitRSVP(answer: RSVPAnswer): Promise<void> {
+  const supabaseUrl = import.meta.env.VITE_SUPABASE_URL?.trim().replace(/\/$/, '')
+  const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY?.trim()
 
-  try {
-    if (webhookUrl) {
-      await fetch(webhookUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(answer),
-      })
-      return { persisted: true }
-    }
-
-    if (supabaseUrl && supabaseKey) {
-      await fetch(`${supabaseUrl}/rest/v1/rsvps`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          apikey: supabaseKey,
-          Authorization: `Bearer ${supabaseKey}`,
-          Prefer: 'return=minimal',
-        },
-        body: JSON.stringify({
-          guest_name: answer.guestName,
-          attending: answer.attending,
-          bringing_plus_one: answer.bringingPlusOne,
-          plus_one_name: answer.plusOneName,
-          message: answer.message,
-        }),
-      })
-      return { persisted: true }
-    }
-  } catch {
-    // Silencioso a propósito: nunca mostramos un error técnico al invitado.
+  if (!supabaseUrl || !supabaseAnonKey) {
+    throw new Error('Missing Supabase RSVP configuration')
   }
 
-  const existing = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '[]') as RSVPAnswer[]
-  existing.push(answer)
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(existing))
-  return { persisted: false }
+  const controller = new AbortController()
+  const timeoutId = window.setTimeout(() => controller.abort(), RSVP_TIMEOUT_MS)
+
+  try {
+    const response = await fetch(`${supabaseUrl}/rest/v1/rsvps`, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        apikey: supabaseAnonKey,
+        Authorization: `Bearer ${supabaseAnonKey}`,
+        'Content-Type': 'application/json',
+        Prefer: 'return=minimal',
+      },
+      body: JSON.stringify({
+        guest_name: answer.guestName,
+        attending: answer.attending,
+        bringing_plus_one: answer.bringingPlusOne,
+        plus_one_name: answer.plusOneName,
+        message: answer.message,
+        created_at: answer.createdAt,
+      }),
+      signal: controller.signal,
+    })
+
+    if (!response.ok) {
+      throw new Error(`Supabase RSVP insert failed with ${response.status}`)
+    }
+  } finally {
+    window.clearTimeout(timeoutId)
+  }
 }

@@ -5,12 +5,11 @@ import type { InvitationData } from '@/types'
  * Ningún componente debe tener textos de evento hardcodeados: siempre
  * se importa desde este archivo.
  *
- * babyName, parents.mother y parents.father quedan como placeholders
- * intencionalmente: reemplázalos aquí cuando estén confirmados y se
- * propagarán a toda la invitación automáticamente.
+ * babyName, parents.mother y parents.father son editables: ajustalos
+ * aquí y se propagarán a toda la invitación automáticamente.
  */
 export const invitation: InvitationData = {
-  babyName: 'Leonardo',
+  babyName: 'Leandro',
 
   parents: {
     mother: 'Alejandra',
@@ -44,6 +43,28 @@ export const invitation: InvitationData = {
   photos: {
     hero: '/images/couple-hero.jpg',
     detail: '/images/couple-detail.jpg',
+  },
+
+  interactiveGame: {
+    eyebrow: 'Un juego rápido',
+    question: '¿A quién crees que se parecerá más?',
+    options: [
+      {
+        id: 'mother',
+        label: 'A mamá',
+        response: 'Voto anotado: quizá herede la sonrisa de mamá.',
+      },
+      {
+        id: 'father',
+        label: 'A papá',
+        response: 'Voto anotado: quizá tenga los gestos de papá.',
+      },
+      {
+        id: 'both',
+        label: 'A los dos',
+        response: 'Voto anotado: la mejor apuesta, un poquito de ambos.',
+      },
+    ],
   },
 
   // Vacío intencionalmente: la sección de regalos no se muestra
