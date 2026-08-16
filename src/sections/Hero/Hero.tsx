@@ -13,7 +13,20 @@ export function Hero() {
           </p>
         </FadeInSection>
 
-        <FadeInSection delay={0.15}>
+        {invitation.photos.hero && (
+          <FadeInSection delay={0.1} y={16} className="w-full max-w-[280px]">
+            <div className="overflow-hidden rounded-[2rem] border border-border shadow-[0_18px_40px_-20px_rgba(91,61,46,0.35)]">
+              <img
+                src={invitation.photos.hero}
+                alt={`${invitation.parents.mother} y ${invitation.parents.father} esperando a ${invitation.babyName}`}
+                className="aspect-[2/3] w-full object-cover"
+                loading="eager"
+              />
+            </div>
+          </FadeInSection>
+        )}
+
+        <FadeInSection delay={0.2}>
           <div className="flex flex-col items-center gap-2">
             <span className="text-xs uppercase tracking-[0.3em] text-muted">Celebramos a</span>
             <h2 className="font-display text-3xl text-primary sm:text-4xl">

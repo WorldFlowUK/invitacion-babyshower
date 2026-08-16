@@ -123,10 +123,9 @@ src/
 
 ## Pendiente antes de compartir el link
 
-Nombre del bebé y de los papás en `src/data/invitation.ts`. Archivo de
-música en `public/audio/background.mp3`. Imagen de social preview en
-`public/images/og-image.jpg` (1200×630px). Backend de RSVP configurado
-(webhook o Supabase). Link de mesa de regalos si aplica, en
+Nombre del bebé, papás, música y fotografías ya están cargados. Lo único
+que falta es un backend de RSVP configurado (webhook o Supabase, ver
+sección anterior) y, si aplica, el link de mesa de regalos en
 `giftRegistryUrl`.
 
 El dashboard administrativo (`/admin`) descrito en el brief original
