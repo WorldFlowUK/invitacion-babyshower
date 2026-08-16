@@ -1,4 +1,4 @@
-import type { InvitationData } from '@/types'
+﻿import type { InvitationData } from '@/types'
 
 /**
  * Toda la información editable de la invitación vive aquí.
@@ -9,7 +9,7 @@ import type { InvitationData } from '@/types'
  * aquí y se propagarán a toda la invitación automáticamente.
  */
 export const invitation: InvitationData = {
-  babyName: 'Leandro',
+  babyName: 'Leonardo',
 
   parents: {
     mother: 'Alejandra',
