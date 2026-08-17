@@ -42,7 +42,6 @@ export function Hero() {
         <FadeInSection delay={0.3}>
           <p className="max-w-sm text-sm leading-relaxed text-foreground/80">
           La familia VW crece. Únete a nosotros para celebrar el Baby Shower de Leonardo. Costo del evento: $375 pesos.
-            llegada de esta nueva vida.
           </p>
         </FadeInSection>
       </Container>
