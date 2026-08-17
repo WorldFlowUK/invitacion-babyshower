@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+﻿import type { Config } from 'tailwindcss'
 
 export default {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
@@ -13,6 +13,8 @@ export default {
         muted: 'rgb(var(--muted) / <alpha-value>)',
         border: 'rgb(var(--border) / <alpha-value>)',
         surface: 'rgb(var(--surface) / <alpha-value>)',
+        'baby-blue': 'rgb(var(--baby-blue) / <alpha-value>)',
+        'baby-soft': 'rgb(var(--baby-blue-soft) / <alpha-value>)',
       },
       fontFamily: {
         display: ['"Cormorant Garamond"', 'serif'],

@@ -15,10 +15,10 @@ export function Hero() {
 
         {invitation.photos.hero && (
           <FadeInSection delay={0.1} y={16} className="w-full max-w-[18rem] sm:max-w-xs">
-            <div className="overflow-hidden rounded-[2rem] border border-border shadow-[0_18px_40px_-20px_rgba(91,61,46,0.35)]">
+            <div className="overflow-hidden rounded-[2rem] border border-sky-200/80 shadow-[0_18px_40px_-20px_rgba(186,230,253,0.5)]">
               <img
                 src={invitation.photos.hero}
-                alt={`${invitation.parents.mother} y ${invitation.parents.father} esperando a ${invitation.babyName}`}
+                alt={${invitation.parents.mother} y  esperando a }
                 width={1000}
                 height={1500}
                 className="block aspect-[2/3] h-auto w-full object-cover object-center"
@@ -32,6 +32,9 @@ export function Hero() {
 
         <FadeInSection delay={0.2}>
           <div className="flex flex-col items-center gap-2">
+            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full chip-boy text-xs font-semibold tracking-wider uppercase mb-1 shadow-sm">
+              🩵 ¡Es un niño! 🍼
+            </div>
             <span className="text-xs uppercase tracking-[0.3em] text-muted">Celebramos a</span>
             <h2 className="font-display text-3xl text-primary sm:text-4xl">
               {invitation.babyName}
@@ -41,7 +44,7 @@ export function Hero() {
 
         <FadeInSection delay={0.3}>
           <p className="max-w-sm text-sm leading-relaxed text-foreground/80">
-          La familia VW crece. Únete a nosotros para celebrar el Baby Shower de Leonardo. Costo del evento: $375 pesos.
+            La familia VW crece. Únete a nosotros para celebrar el Baby Shower de {invitation.babyName}. Costo del evento: $375 pesos.
           </p>
         </FadeInSection>
       </Container>

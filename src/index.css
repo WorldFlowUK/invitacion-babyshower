@@ -61,3 +61,23 @@ body {
 .font-display {
   font-family: 'Cormorant Garamond', serif;
 }
+
+/* === TEMA BABY SHOWER AZUL PASTEL === */
+:root {
+  --baby-blue: 186 230 253;
+  --baby-blue-soft: 224 242 254;
+}
+
+.bg-baby-pattern {
+  background-color: rgb(var(--background));
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgb(var(--baby-blue) / 0.35) 1.5px, transparent 1.5px),
+    radial-gradient(circle at 0% 0%, rgb(var(--baby-blue) / 0.2) 1px, transparent 1px);
+  background-size: 28px 28px, 14px 14px;
+}
+
+.chip-boy {
+  background-color: rgb(var(--baby-blue-soft) / 0.8);
+  border: 1px solid rgb(var(--baby-blue));
+  color: #0369a1;
+}

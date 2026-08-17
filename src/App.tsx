@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { AudioProvider } from '@/components/audio/AudioProvider'
 import { MusicPlayer } from '@/components/audio/MusicPlayer'
 import { GrowthRail } from '@/components/effects/GrowthRail'
@@ -23,7 +23,7 @@ function Invitation() {
     <>
       <GrowthRail />
       <MusicPlayer />
-      <main>
+      <main className="bg-baby-pattern min-h-screen">
         <Hero />
         <EventDetails />
         <Countdown />
