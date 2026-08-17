@@ -18,7 +18,7 @@ export function Hero() {
             <div className="overflow-hidden rounded-[2rem] border border-sky-200/80 shadow-[0_18px_40px_-20px_rgba(186,230,253,0.5)]">
               <img
                 src={invitation.photos.hero}
-                alt={${invitation.parents.mother} y  esperando a }
+                alt={`${invitation.parents.mother} y ${invitation.parents.father} esperando a ${invitation.babyName}`}
                 width={1000}
                 height={1500}
                 className="block aspect-[2/3] h-auto w-full object-cover object-center"
