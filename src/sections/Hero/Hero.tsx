@@ -15,8 +15,8 @@ export function Hero() {
 
         {invitation.photos.hero && (
           <FadeInSection delay={0.1} y={16} className="w-full max-w-[18rem] sm:max-w-xs">
-            <div className="p-2 rounded-[2.2rem] bg-white/80 backdrop-blur-sm border border-sky-200/60 shadow-[0_20px_50px_-15px_rgba(2,132,199,0.15)]">
-              <div className="overflow-hidden rounded-[1.8rem]">
+            <div className="p-[10px] sm:p-3 rounded-xl bg-white border border-sky-100/60 shadow-2xl">
+              <div className="overflow-hidden rounded-lg ring-1 ring-black/[0.04]">
                 <img
                   src={invitation.photos.hero}
                   alt={`${invitation.parents.mother} y ${invitation.parents.father} esperando a ${invitation.babyName}`}
@@ -34,10 +34,10 @@ export function Hero() {
 
         <FadeInSection delay={0.2}>
           <div className="flex flex-col items-center gap-2.5">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full chip-boy-editorial text-[10px] font-semibold uppercase shadow-xs">
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+            <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full chip-boy-editorial text-sm shadow-xs">
+              <span className="h-px w-6 bg-sky-300/50" />
               ¡Es un niño!
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-sky-400"></span>
+              <span className="h-px w-6 bg-sky-300/50" />
             </div>
             
             <span className="text-xs uppercase tracking-[0.35em] text-muted font-medium mt-1">Celebramos a</span>
@@ -50,9 +50,13 @@ export function Hero() {
 
         <FadeInSection delay={0.3}>
           <p className="max-w-sm text-sm leading-relaxed text-foreground/80 font-light">
-            La familia VW crece. Únete a nosotros para celebrar el Baby Shower de {invitation.babyName}.<br />
-            <span className="font-medium text-primary/90 mt-1 inline-block">Costo del evento: $375 pesos.</span>
+            La familia VW crece. Únete a nosotros para celebrar el Baby Shower de {invitation.babyName}.
           </p>
+          <div className="mt-4 flex flex-col items-center gap-2 bg-surface/30 rounded-2xl px-6 py-4 border border-border/50">
+            <div className="h-px w-12 bg-border" />
+            <span className="text-xs uppercase tracking-[0.3em] text-muted">Costo del evento</span>
+            <span className="font-display text-lg text-primary">{"$375 pesos"}</span>
+          </div>
         </FadeInSection>
       </Container>
     </section>

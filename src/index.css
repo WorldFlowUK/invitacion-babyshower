@@ -69,21 +69,24 @@ body {
   --baby-blue-dark: 3 105 161;
 }
 
-/* Fondo degradado suave de acuarela / nube */
+/* Papel tapiz infantil de lujo — ositos, nubes y estrellas */
 .bg-baby-pattern {
   background-color: #faf9f6;
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(186, 230, 253, 0.45) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(224, 242, 254, 0.5) 0px, transparent 50%),
-    radial-gradient(at 50% 50%, rgba(254, 243, 199, 0.25) 0px, transparent 50%);
+  background-image:
+    radial-gradient(at 0% 0%, rgba(186, 230, 253, 0.18) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(224, 242, 254, 0.2) 0px, transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='none'%3E%3Cg stroke='%23bae6fd' stroke-width='1.2'%3E%3Cg opacity='.13'%3E%3Ccircle cx='28' cy='30' r='9'/%3E%3Ccircle cx='20' cy='22' r='4'/%3E%3Ccircle cx='36' cy='22' r='4'/%3E%3C/g%3E%3Cg opacity='.11'%3E%3Cellipse cx='75' cy='18' rx='8' ry='5'/%3E%3Cellipse cx='68' cy='20' rx='5' ry='3.5'/%3E%3Cellipse cx='82' cy='20' rx='5' ry='3.5'/%3E%3C/g%3E%3Cg opacity='.12'%3E%3Cpath d='M78 66L79.5 70.5 84 72 79.5 73.5 78 78 76.5 73.5 72 72 76.5 70.5Z'/%3E%3C/g%3E%3Cg opacity='.1'%3E%3Cpath d='M18 78L19 80.5 22 82 19 83.5 18 86 17 83.5 14 82 17 80.5Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-size: auto, auto, 100px 100px;
   background-attachment: fixed;
 }
 
-/* Insignia elegante sin emojis */
+/* Insignia editorial — versalitas serif */
 .chip-boy-editorial {
+  font-family: 'Cormorant Garamond', serif;
+  font-variant: small-caps;
   background: rgba(224, 242, 254, 0.7);
   backdrop-filter: blur(8px);
   border: 1px solid rgba(186, 230, 253, 0.8);
   color: #0284c7;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.25em;
 }
