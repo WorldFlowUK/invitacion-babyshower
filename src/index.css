@@ -71,22 +71,19 @@ body {
 
 /* Papel tapiz infantil de lujo — ositos, nubes y estrellas */
 .bg-baby-pattern {
-  background-color: #faf9f6;
-  background-image:
-    radial-gradient(at 0% 0%, rgba(186, 230, 253, 0.18) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(224, 242, 254, 0.2) 0px, transparent 50%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='none'%3E%3Cg stroke='%23bae6fd' stroke-width='1.2'%3E%3Cg opacity='.13'%3E%3Ccircle cx='28' cy='30' r='9'/%3E%3Ccircle cx='20' cy='22' r='4'/%3E%3Ccircle cx='36' cy='22' r='4'/%3E%3C/g%3E%3Cg opacity='.11'%3E%3Cellipse cx='75' cy='18' rx='8' ry='5'/%3E%3Cellipse cx='68' cy='20' rx='5' ry='3.5'/%3E%3Cellipse cx='82' cy='20' rx='5' ry='3.5'/%3E%3C/g%3E%3Cg opacity='.12'%3E%3Cpath d='M78 66L79.5 70.5 84 72 79.5 73.5 78 78 76.5 73.5 72 72 76.5 70.5Z'/%3E%3C/g%3E%3Cg opacity='.1'%3E%3Cpath d='M18 78L19 80.5 22 82 19 83.5 18 86 17 83.5 14 82 17 80.5Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  background-size: auto, auto, 100px 100px;
-  background-attachment: fixed;
+  background-color: #f8fafc;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%2338bdf8' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' opacity='0.28'%3E%3Cpath d='M20 25 a5 5 0 0 1 -4 -8 a5 5 0 0 1 7 2 M36 25 a5 5 0 0 0 4 -8 a5 5 0 0 0 -7 2'/%3E%3Ccircle cx='28' cy='28' r='9'/%3E%3Ccircle cx='25' cy='27' r='1' fill='%2338bdf8'/%3E%3Ccircle cx='31' cy='27' r='1' fill='%2338bdf8'/%3E%3Cellipse cx='28' cy='31' rx='2.5' ry='1.5'/%3E%3Cpath d='M65 75 a6 6 0 0 1 11 -2 a5 5 0 0 1 7 5 a4 4 0 0 1 -2 7 h-16 a5 5 0 0 1 0 -10 z'/%3E%3Cpath d='M75 22 l1 3 l3 1 l-3 1 l-1 3 l-1 -3 l-3 -1 l3 -1 z' fill='%2338bdf8'/%3E%3Cpath d='M25 72 l1 2 l2 1 l-2 1 l-1 2 l-1 -2 l-2 -1 l2 -1 z' fill='%2338bdf8'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 100px 100px;
 }
 
-/* Insignia editorial — versalitas serif */
+/* Insignia editorial — versalitas serif, azul sólido */
 .chip-boy-editorial {
+  background-color: #e0f2fe;
+  border: 1px solid #0284c7;
+  color: #0369a1;
   font-family: 'Cormorant Garamond', serif;
   font-variant: small-caps;
-  background: rgba(224, 242, 254, 0.7);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(186, 230, 253, 0.8);
-  color: #0284c7;
   letter-spacing: 0.25em;
+  font-weight: 700;
 }
