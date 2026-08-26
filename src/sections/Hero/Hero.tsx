@@ -50,13 +50,8 @@ export function Hero() {
 
         <FadeInSection delay={0.3}>
           <p className="max-w-sm text-sm leading-relaxed text-foreground/80 font-light">
-            La familia VW crece. Únete a nosotros para celebrar el Baby Shower de {invitation.babyName}.
+            Acompáñanos a celebrar la llegada de {invitation.babyName}.
           </p>
-          <div className="mt-4 flex flex-col items-center gap-2 bg-sky-50/90 rounded-2xl px-6 py-4 border border-sky-200">
-            <div className="h-px w-12 bg-sky-200" />
-            <span className="text-xs uppercase tracking-[0.3em] text-sky-600">Costo del evento</span>
-            <span className="font-display text-lg text-sky-800 font-bold">{"$375 pesos"}</span>
-          </div>
         </FadeInSection>
       </Container>
     </section>

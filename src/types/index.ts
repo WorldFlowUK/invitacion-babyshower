@@ -40,7 +40,7 @@ export type InvitationData = {
   guests: {
     total: number
     plusOneAllowed: boolean
-    maxPlusOnes: 1
+    maxPlusOnes: 0 | 1
   }
   audio: {
     enabled: boolean

@@ -9,7 +9,6 @@ import { Countdown } from '@/sections/Countdown/Countdown'
 import { Interactive } from '@/sections/Interactive/Interactive'
 import { Location } from '@/sections/Location/Location'
 import { RSVP } from '@/sections/RSVP/RSVP'
-import { Gifts } from '@/sections/Gifts/Gifts'
 import { Closing } from '@/sections/Closing/Closing'
 
 function Invitation() {
@@ -30,7 +29,6 @@ function Invitation() {
         <Interactive />
         <Location />
         <RSVP />
-        <Gifts />
         <Closing />
       </main>
     </>

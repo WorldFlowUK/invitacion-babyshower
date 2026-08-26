@@ -31,8 +31,8 @@ export const invitation: InvitationData = {
 
   guests: {
     total: 24,
-    plusOneAllowed: true,
-    maxPlusOnes: 1,
+    plusOneAllowed: false,
+    maxPlusOnes: 0,
   },
 
   audio: {
