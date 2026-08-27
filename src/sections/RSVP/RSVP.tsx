@@ -9,7 +9,7 @@ export function RSVP() {
         <FadeInSection className="mb-10 flex flex-col items-center gap-2 text-center">
           <span className="text-xs uppercase tracking-[0.3em] text-muted">Confirma tu lugar</span>
           <p className="max-w-xs text-sm text-foreground/70">
-            Puedes venir acompañado de una persona. Cuéntanos si podrás estar con nosotros.
+            Cuéntanos si podrás estar con nosotros.
           </p>
         </FadeInSection>
         <FadeInSection delay={0.15}>

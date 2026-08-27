@@ -96,11 +96,11 @@ export function RSVPForm() {
           <motion.div key="done" {...stepVariants} className="flex flex-col gap-3" role="status">
             <span className="text-2xl">✨</span>
             <p className="font-display text-2xl text-primary">
-              {submittedAttending ? '¡Gracias por confirmar! ♡' : 'Gracias por avisarnos ♡'}
+              {submittedAttending ? 'Gracias por confirmar' : 'Gracias por avisarnos'}
             </p>
             <p className="text-sm text-foreground/70">
               {submittedAttending
-                ? 'Será un placer compartir este momento contigo.'
+                ? 'Será un placer pasar este momento contigo.'
                 : 'Te extrañaremos, pero agradecemos muchísimo que nos avisaras.'}
             </p>
           </motion.div>
